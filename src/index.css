@@ -1,0 +1,77 @@
+/* ═══════════════════════════════════════════════════════════
+   Verity Design System — Figma Redesign
+   Refined academic aesthetic with serif display + clean sans
+   ═══════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Libre+Caslon+Display&display=swap');
+@import "tailwindcss";
+
+/* ── Theme Tokens ─────────────────────────────────────────── */
+:root {
+  --background: #f3f6fb;
+  --foreground: #1e2e49;
+  --card: #ffffff;
+  --card-foreground: #1e2e49;
+  --primary: #2d527f;
+  --primary-foreground: #f3f6fb;
+  --secondary: #e6edf7;
+  --secondary-foreground: #1e2e49;
+  --muted: #eaf0f7;
+  --muted-foreground: #5d6c82;
+  --accent: #c7d8f1;
+  --accent-foreground: #1e2e49;
+  --border: #d2dce9;
+  --ring: #42699d;
+  --radius: 0.25rem;
+  --terracotta: #344f78;
+}
+.dark {
+  --background: #1a2c47;
+  --foreground: #f3f6fb;
+  --card: #253a58;
+  --card-foreground: #f3f6fb;
+  --primary: #c3d6f1;
+  --primary-foreground: #1a2c47;
+  --secondary: #253a58;
+  --secondary-foreground: #f3f6fb;
+  --muted: #253a58;
+  --muted-foreground: #bdcbe0;
+  --accent: #c3d6f1;
+  --accent-foreground: #1a2c47;
+  --border: #4e6480;
+  --ring: #c3d6f1;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --color-terracotta: var(--terracotta);
+  --font-sans: 'DM Sans', sans-serif;
+  --font-display: 'Libre Caslon Display', Georgia, serif;
+  --radius-sm: var(--radius);
+}
+
+/* ── Base Layer ───────────────────────────────────────────── */
+@layer base {
+  html { scrollbar-width: none; }
+  html::-webkit-scrollbar { display: none; }
+  body { background: var(--background); color: var(--foreground); font-family: var(--font-sans); }
+  button, a, input { -webkit-tap-highlight-color: transparent; }
+  button:not(:disabled), a { cursor: pointer; }
+  ::selection { background: var(--accent); color: var(--foreground); }
+  :focus-visible { outline: 2px solid var(--ring); outline-offset: 5px; }
+  dialog::backdrop { background: #152039cc; backdrop-filter: blur(7px); }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+}
