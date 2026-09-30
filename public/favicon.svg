@@ -1,6 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <rect width="64" height="64" rx="14" fill="#1B2340"/>
-  <rect x="2" y="2" width="60" height="60" rx="12" stroke="#F2A93B" stroke-width="3" fill="none"/>
-  <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle"
-        font-family="Georgia, serif" font-weight="700" font-size="36" fill="#F2A93B">V</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <style>
+    .brand-asterisk {
+      stroke: #1e2e49;
+    }
+    @media (prefers-color-scheme: dark) {
+      .brand-asterisk {
+        stroke: #f3f6fb;
+      }
+    }
+  </style>
+  <path class="brand-asterisk" d="M16 4.5v23" stroke-width="2.75" stroke-linecap="round"/>
+  <path class="brand-asterisk" d="m25.96 10.25-19.92 11.5" stroke-width="2.75" stroke-linecap="round"/>
+  <path class="brand-asterisk" d="m6.04 10.25 19.92 11.5" stroke-width="2.75" stroke-linecap="round"/>
 </svg>
