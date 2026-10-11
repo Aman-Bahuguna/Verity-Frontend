@@ -1,9 +1,10 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
 import { motion, AnimatePresence } from "motion/react"
 import { Asterisk, ArrowUpRight, Menu, X } from "lucide-react"
 import { navigation } from "../constants"
 
-export default function Navbar({ active, navigate, onAuthClick }) {
+export default function Navbar({ active, navigate }) {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const handleNav = (id) => {
@@ -57,14 +58,14 @@ export default function Navbar({ active, navigate, onAuthClick }) {
         </nav>
 
         <div className="flex items-center gap-4">
-          <button
-            onClick={() => onAuthClick("sign-in")}
+          <Link
+            to="/sign-in"
             className="hidden py-2.5 text-xs font-medium text-foreground transition-colors hover:text-primary hover:underline hover:underline-offset-4 sm:block"
           >
             Sign in
-          </button>
-          <button
-            onClick={() => onAuthClick("sign-up")}
+          </Link>
+          <Link
+            to="/sign-up"
             className="group hidden items-center gap-4 rounded-full bg-primary px-5 py-2.5 text-xs font-medium text-primary-foreground transition-colors hover:bg-foreground sm:flex"
           >
             Sign up
@@ -72,7 +73,7 @@ export default function Navbar({ active, navigate, onAuthClick }) {
               size={15}
               className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
             />
-          </button>
+          </Link>
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label={menuOpen ? "Close navigation" : "Open navigation"}
@@ -113,25 +114,21 @@ export default function Navbar({ active, navigate, onAuthClick }) {
                 </a>
               ))}
               <div className="mt-6 flex items-center gap-4">
-                <button
-                  onClick={() => {
-                    setMenuOpen(false)
-                    onAuthClick("sign-in")
-                  }}
-                  className="flex-1 rounded-full border border-primary/40 px-5 py-3 text-sm font-medium transition-colors hover:bg-secondary"
+                <Link
+                  to="/sign-in"
+                  onClick={() => setMenuOpen(false)}
+                  className="flex-1 text-center rounded-full border border-primary/40 px-5 py-3 text-sm font-medium transition-colors hover:bg-secondary"
                 >
                   Sign in
-                </button>
-                <button
-                  onClick={() => {
-                    setMenuOpen(false)
-                    onAuthClick("sign-up")
-                  }}
+                </Link>
+                <Link
+                  to="/sign-up"
+                  onClick={() => setMenuOpen(false)}
                   className="flex flex-1 items-center justify-center gap-3 rounded-full bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-foreground"
                 >
                   Sign up
                   <ArrowUpRight size={16} />
-                </button>
+                </Link>
               </div>
             </div>
           </motion.nav>

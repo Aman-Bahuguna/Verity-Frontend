@@ -11,7 +11,6 @@ import HowItWorksSection from "./sections/HowItWorksSection"
 import PhilosophySection from "./sections/PhilosophySection"
 import FooterSection from "./sections/FooterSection"
 import StudyDialog from "./components/StudyDialog"
-import AuthDialog from "./components/AuthDialog"
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
@@ -19,7 +18,6 @@ export default function Landing() {
   const root = useRef(null)
   const [active, setActive] = useState("")
   const [studyOpen, setStudyOpen] = useState(false)
-  const [authMode, setAuthMode] = useState(null)
 
   useLayoutEffect(() => {
     const context = gsap.context(() => {
@@ -115,6 +113,10 @@ export default function Landing() {
   }, [])
 
   useEffect(() => {
+    document.title = "Verity · Academic Study Space"
+  }, [])
+
+  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) =>
         entries.forEach((entry) => {
@@ -146,7 +148,6 @@ export default function Landing() {
       <Navbar
         active={active}
         navigate={navigate}
-        onAuthClick={(mode) => setAuthMode(mode)}
       />
 
       <main id="main">
@@ -165,15 +166,6 @@ export default function Landing() {
       />
 
       {studyOpen && <StudyDialog onClose={() => setStudyOpen(false)} />}
-
-      {authMode && (
-        <AuthDialog
-          key={authMode}
-          mode={authMode}
-          onClose={() => setAuthMode(null)}
-          onModeChange={setAuthMode}
-        />
-      )}
     </div>
   )
 }

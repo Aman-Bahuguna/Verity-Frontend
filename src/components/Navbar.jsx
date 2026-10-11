@@ -68,10 +68,10 @@ export default function Navbar() {
 
         {/* CTA */}
         <div ref={actionsRef} className="navbar-actions">
-          <Link to="/login" className="navbar-pill navbar-pill--ghost">
+          <Link to="/sign-in" className="navbar-pill navbar-pill--ghost">
             Log In
           </Link>
-          <Link to="/signup" className="btn-primary" style={{ padding: "0.4rem 1.125rem", fontSize: "1rem" }}>
+          <Link to="/sign-up" className="btn-primary" style={{ padding: "0.4rem 1.125rem", fontSize: "1rem" }}>
             Get Started
             <ArrowRight size={14} weight="bold" />
           </Link>
@@ -94,8 +94,8 @@ export default function Navbar() {
           <a href="#how-it-works" className="navbar-mobile-link" onClick={() => setMobileOpen(false)}>How it Works</a>
           <a href="#about" className="navbar-mobile-link" onClick={() => setMobileOpen(false)}>About</a>
           <div className="navbar-mobile-divider" />
-          <Link to="/login" className="navbar-mobile-link" onClick={() => setMobileOpen(false)}>Log In</Link>
-          <Link to="/signup" className="btn-primary" style={{ justifyContent: "center" }} onClick={() => setMobileOpen(false)}>
+          <Link to="/sign-in" className="navbar-mobile-link" onClick={() => setMobileOpen(false)}>Log In</Link>
+          <Link to="/sign-up" className="btn-primary" style={{ justifyContent: "center" }} onClick={() => setMobileOpen(false)}>
             Get Started <ArrowRight size={14} weight="bold" />
           </Link>
         </div>
